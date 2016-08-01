@@ -4,26 +4,32 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>plist读写 | Kevin&#39;s Blog</title>
+    <title>透明UIViewController | Kevin&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Kevin Zhao">
     
 
     
-    <meta name="description" content="plistplist, 做iOS开发时，经常用到到plist文件，  那plist文件是什么呢？ 它全名是：Property List，属性列表文件，它是一种用来存储串行化后的对象的文件。属性列表文件的扩展名为.plist ，因此通常被称为 plist文件。文件是xml格式的。Plist文件通常用于储存用户设置，也可以用于存储捆绑的信息.今天记录使用plist记录用户登录信息的方法。
-plist写">
+    <meta name="description" content="半透明效果今天在做项目时遇到了需要present一个半透明的view的需求，而目前很多博主的方法都无法实现，本博主内心崩溃…于是尝试了众多方法。
+贴上代码其实非常简单，关键在于设置modalPresentationStyle为OverCurrentContext。（经尝试在present出的那个controller中也要进行这个设置）
+ 下面贴上代码
+let vc = FoodSureViewCo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="plist读写">
-<meta property="og:url" content="http://yoursite.com/2016/07/26/plist读写/index.html">
+<meta property="og:title" content="透明UIViewController">
+<meta property="og:url" content="http://yoursite.com/2016/08/01/透明UIViewController/index.html">
 <meta property="og:site_name" content="Kevin's Blog">
-<meta property="og:description" content="plistplist, 做iOS开发时，经常用到到plist文件，  那plist文件是什么呢？ 它全名是：Property List，属性列表文件，它是一种用来存储串行化后的对象的文件。属性列表文件的扩展名为.plist ，因此通常被称为 plist文件。文件是xml格式的。Plist文件通常用于储存用户设置，也可以用于存储捆绑的信息.今天记录使用plist记录用户登录信息的方法。
-plist写">
-<meta property="og:updated_time" content="2016-07-26T08:56:07.000Z">
+<meta property="og:description" content="半透明效果今天在做项目时遇到了需要present一个半透明的view的需求，而目前很多博主的方法都无法实现，本博主内心崩溃…于是尝试了众多方法。
+贴上代码其实非常简单，关键在于设置modalPresentationStyle为OverCurrentContext。（经尝试在present出的那个controller中也要进行这个设置）
+ 下面贴上代码
+let vc = FoodSureViewCo">
+<meta property="og:updated_time" content="2016-08-01T02:03:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="plist读写">
-<meta name="twitter:description" content="plistplist, 做iOS开发时，经常用到到plist文件，  那plist文件是什么呢？ 它全名是：Property List，属性列表文件，它是一种用来存储串行化后的对象的文件。属性列表文件的扩展名为.plist ，因此通常被称为 plist文件。文件是xml格式的。Plist文件通常用于储存用户设置，也可以用于存储捆绑的信息.今天记录使用plist记录用户登录信息的方法。
-plist写">
+<meta name="twitter:title" content="透明UIViewController">
+<meta name="twitter:description" content="半透明效果今天在做项目时遇到了需要present一个半透明的view的需求，而目前很多博主的方法都无法实现，本博主内心崩溃…于是尝试了众多方法。
+贴上代码其实非常简单，关键在于设置modalPresentationStyle为OverCurrentContext。（经尝试在present出的那个controller中也要进行这个设置）
+ 下面贴上代码
+let vc = FoodSureViewCo">
 
     
     <link rel="alternative" href="/atom.xml" title="Kevin&#39;s Blog" type="application/atom+xml">
@@ -83,14 +89,14 @@ plist写">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/07/26/plist读写/" title="plist读写" itemprop="url">plist读写</a>
+      <a href="/2016/08/01/透明UIViewController/" title="透明UIViewController" itemprop="url">透明UIViewController</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Kevin Zhao" target="_blank" itemprop="author">Kevin Zhao</a>
 		
   <p class="article-time">
-    <time datetime="2016-07-26T07:58:49.000Z" itemprop="datePublished"> 发表于 2016-07-26</time>
+    <time datetime="2016-08-01T01:54:15.000Z" itemprop="datePublished"> 发表于 2016-08-01</time>
     
   </p>
 </header>
@@ -99,44 +105,21 @@ plist写">
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#plist"><span class="toc-number">1.</span> <span class="toc-text">plist</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#plist写入"><span class="toc-number">1.1.</span> <span class="toc-text">plist写入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#plist读取"><span class="toc-number">1.1.1.</span> <span class="toc-text">plist读取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#总结"><span class="toc-number">1.1.2.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#半透明效果"><span class="toc-number">1.</span> <span class="toc-text">半透明效果</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#贴上代码"><span class="toc-number">1.1.</span> <span class="toc-text">贴上代码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#总结"><span class="toc-number">1.1.1.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></li></ol>
 		
 		</div>
 		
-		<h2 id="plist"><a href="#plist" class="headerlink" title="plist"></a>plist</h2><p><strong>plist</strong>, 做iOS开发时，经常用到到plist文件，  那plist文件是什么呢？ 它全名是：Property List，属性列表文件，它是一种用来存储串行化后的对象的文件。属性列表文件的扩展名为.plist ，因此通常被称为 plist文件。文件是xml格式的。<br><br>Plist文件通常用于储存用户设置，也可以用于存储捆绑的信息.<br><br>今天记录使用plist记录用户登录信息的方法。</p>
-<h3 id="plist写入"><a href="#plist写入" class="headerlink" title="plist写入"></a>plist写入</h3><p> 下面贴上代码</p>
-<pre><code>      let path = NSHomeDirectory() + &quot;/Documents&quot;
-print(&quot;path\n\(path)&quot;)
+		<h2 id="半透明效果"><a href="#半透明效果" class="headerlink" title="半透明效果"></a>半透明效果</h2><p>今天在做项目时遇到了需要present一个半透明的view的需求，而目前很多博主的方法都无法实现，本博主内心崩溃…于是尝试了众多方法。</p>
+<h3 id="贴上代码"><a href="#贴上代码" class="headerlink" title="贴上代码"></a>贴上代码</h3><p>其实非常简单，关键在于设置modalPresentationStyle为OverCurrentContext。（经尝试在present出的那个controller中也要进行这个设置）</p>
+<p> 下面贴上代码</p>
+<pre><code>let vc = FoodSureViewController()
+self.definesPresentationContext = true
+self.modalPresentationStyle = .OverCurrentContext
+vc.view.backgroundColor = UIColor(colorLiteralRed: 0/255, green: 0/255, blue: 0/255, alpha: 0.7)
+self.presentViewController(vc, animated: true) {
 
-    let fileManager = NSFileManager.defaultManager()
-    let localDataPath = NSHomeDirectory() + &quot;/Documents/login.plist&quot;
-var isLocalDataExisted = fileManager.fileExistsAtPath(localDataPath)
-
-//判断.plist文件是否存在
-if isLocalDataExisted == false//文件不存在
-{
-    fileManager.createFileAtPath(localDataPath, contents: nil, attributes: nil)//创建.plist文件
 }
-isLocalDataExisted = fileManager.fileExistsAtPath(localDataPath)
-print(&quot;isLocalDataExisted-&gt;\(isLocalDataExisted)&quot;)
-
-//设置root
-let root = NSMutableDictionary()
-
-root.setValue(id, forKey: &quot;id&quot;)
-root.setValue(USERNAME, forKey: &quot;Username&quot;)
-root.setValue(PASSWORD, forKey: &quot;Password&quot;)
-//将root写入.plist文件
-root.writeToFile(localDataPath, atomically: true)
-</code></pre><h4 id="plist读取"><a href="#plist读取" class="headerlink" title="plist读取"></a>plist读取</h4><pre><code>   let fileManager = NSFileManager.defaultManager()
-   let localDataPath = NSHomeDirectory() + &quot;/Documents/login.plist&quot;
-var isLocalDataExisted = fileManager.fileExistsAtPath(localDataPath)
-if isLocalDataExisted == true{
-    var data : NSMutableDictionary = NSMutableDictionary(contentsOfFile: localDataPath)!
-    id = data.objectForKey(&quot;id&quot;) as! String
-    USERNAME = data.objectForKey(&quot;Username&quot;) as! String
-    PASSWORD = data.objectForKey(&quot;Password&quot;) as! String
-</code></pre><h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>通过上述的方法就实现登录信息的本地化，讲信息以plist形式写入本地沙盒中。</p>
+</code></pre><h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>通过上面简单的几步就可实现view的半透明效果，这也是项目中常见的需求之一。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -149,7 +132,7 @@ if isLocalDataExisted == true{
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2016/07/26/plist读写/" data-title="plist读写 | Kevin&#39;s Blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2016/08/01/透明UIViewController/" data-title="透明UIViewController | Kevin&#39;s Blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -163,18 +146,18 @@ if isLocalDataExisted == true{
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/07/27/hello-world/" title="Hello World">
+ <a href="/2016/08/01/UIimage的tintcolor/" title="UIimage的tintcolor">
   <strong>上一篇：</strong><br/>
   <span>
-  Hello World</span>
+  UIimage的tintcolor</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2016/07/25/Swift中的TableView/"  title="Swift使用Autolayout实现UITableView的Cell高度自适应">
+<a href="/2016/07/27/hello-world/"  title="Hello World">
  <strong>下一篇：</strong><br/> 
- <span>Swift使用Autolayout实现UITableView的Cell高度自适应
+ <span>Hello World
 </span>
 </a>
 </div>
@@ -189,7 +172,7 @@ if isLocalDataExisted == true{
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#plist"><span class="toc-number">1.</span> <span class="toc-text">plist</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#plist写入"><span class="toc-number">1.1.</span> <span class="toc-text">plist写入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#plist读取"><span class="toc-number">1.1.1.</span> <span class="toc-text">plist读取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#总结"><span class="toc-number">1.1.2.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#半透明效果"><span class="toc-number">1.</span> <span class="toc-text">半透明效果</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#贴上代码"><span class="toc-number">1.1.</span> <span class="toc-text">贴上代码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#总结"><span class="toc-number">1.1.1.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></li></ol>
  
   </div>
 
