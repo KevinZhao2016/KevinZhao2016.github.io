@@ -17,7 +17,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/09/05/iOS入门学习路线/index.html">
 <meta property="og:site_name" content="Kevin's Blog">
 <meta property="og:description" content="语言准备自从Swift开源之后，苹果对它的推广力度日益增大，如今swift已到了3.0的阶段。在2016WWDC上的swift playgrounds虽然只是一个看起来近似于游戏的APP,却足见苹果对于它的重视程度。虽然目前大公司的项目“船大难掉头”，但可以预见几年内swift必将取代OC。对于现阶段的初学者来说，先学习掌握Swift，便足以入手iOS开发了。现在大部分优秀第三方库已有swift版">
-<meta property="og:updated_time" content="2016-09-06T06:25:58.000Z">
+<meta property="og:updated_time" content="2016-09-06T08:41:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS入门学习路线">
 <meta name="twitter:description" content="语言准备自从Swift开源之后，苹果对它的推广力度日益增大，如今swift已到了3.0的阶段。在2016WWDC上的swift playgrounds虽然只是一个看起来近似于游戏的APP,却足见苹果对于它的重视程度。虽然目前大公司的项目“船大难掉头”，但可以预见几年内swift必将取代OC。对于现阶段的初学者来说，先学习掌握Swift，便足以入手iOS开发了。现在大部分优秀第三方库已有swift版">
@@ -48,7 +48,7 @@
 				<h1 class="site-name"><a href="/" title="Kevin&#39;s Blog">Kevin&#39;s Blog</a></h1>
 				<h2 class="blog-motto">Walk steps step by step</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -64,7 +64,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
 						<input type="hidden" name="q" value="site:yoursite.com">
 					</form>
 					
@@ -87,32 +87,39 @@
 		<a href="/about" title="Kevin Zhao" target="_blank" itemprop="author">Kevin Zhao</a>
 		
   <p class="article-time">
-    <time datetime="2016-09-05T11:05:40.000Z" itemprop="datePublished"> Published 2016-09-05</time>
+    <time datetime="2016-09-05T11:05:40.000Z" itemprop="datePublished"> 发表于 2016-09-05</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
+			<strong class="toc-title">文章目录</strong>
 		
 			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#语言准备"><span class="toc-number">1.</span> <span class="toc-text">语言准备</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#学习资料"><span class="toc-number">2.</span> <span class="toc-text">学习资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关于开发"><span class="toc-number">3.</span> <span class="toc-text">关于开发</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#架构"><span class="toc-number">3.1.</span> <span class="toc-text">架构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Controller-的臃肿问题何解？"><span class="toc-number">3.1.1.</span> <span class="toc-text">Controller 的臃肿问题何解？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将网络请求抽象到单独的类中"><span class="toc-number">3.1.2.</span> <span class="toc-text">将网络请求抽象到单独的类中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将界面的拼装抽象到专门的类中"><span class="toc-number">3.1.3.</span> <span class="toc-text">将界面的拼装抽象到专门的类中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构造-ViewModel"><span class="toc-number">3.1.4.</span> <span class="toc-text">构造 ViewModel</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小结"><span class="toc-number">3.1.5.</span> <span class="toc-text">小结</span></a></li></ol></li></ol></li></ol>
 		
 		</div>
 		
 		<h1 id="语言准备"><a href="#语言准备" class="headerlink" title="语言准备"></a>语言准备</h1><p>自从Swift开源之后，苹果对它的推广力度日益增大，如今swift已到了3.0的阶段。在2016WWDC上的swift playgrounds虽然只是一个看起来近似于游戏的APP,却足见苹果对于它的重视程度。虽然目前大公司的项目“船大难掉头”，但可以预见几年内swift必将取代OC。对于现阶段的初学者来说，先学习掌握Swift，便足以入手iOS开发了。<br><br>现在大部分优秀第三方库已有swift版本，少数可能只有OC（但是也可以使用桥接）。个人建议如果需要查看源代码，或者有空余时间则可以去初步了解一下OC，会有利于某些代码的理解。</p>
-<h1 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h1><p>最好的语言学习资料当然是Apple的官方文档啦~这里给出传送门 <a href="https://developer.apple.com/swift/blog/" target="_blank" rel="external"><code>Swift官方文档</code></a>如果一开始看英文文档比较困难，这里也有质量比较高的民间大神整理的 <a href="http://dev.swiftguide.cn" target="_blank" rel="external"><code>Swift Guide</code></a> ,但是在以后的学习过程中看英文文档是程序猿一项必备的技能。</p>
+<h1 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h1><p>最好的语言学习资料当然是Apple的官方文档啦~这里给出传送门 <a href="https://developer.apple.com/swift/blog/" target="_blank" rel="external"><code>Swift官方文档</code></a>如果一开始看英文文档比较困难，这里也有质量比较高的民间大神整理的 <a href="http://dev.swiftguide.cn" target="_blank" rel="external"><code>Swift Guide</code></a> ,但是在以后的学习过程中看英文文档是程序猿一项必备的技能。<br>对于日常写代码过程中遇到的问题，强烈推荐<a href="http://stackoverflow.com" target="_blank" rel="external"><code>stackoverflow</code></a><br>非常棒的一个社区，基本开发过程中遇到的问题上面都有。</p>
 <h1 id="关于开发"><a href="#关于开发" class="headerlink" title="关于开发"></a>关于开发</h1><h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p>目前客户端软件开发框架有很多，比如MVC,MVVM等等，个人比较习惯于MVC的架构。<br>MVC，全称是 Model View Controller，是模型 (model)－视图 (view)－控制器 (controller) 的缩写。它表示的是一种常见的客户端软件开发框架。<br>但是 MVC 这种设计模式真的用得好吗？其实不是的，MVC 这种分层方式虽然清楚，但是如果使用不当，很可能让大量代码都集中在 Controller 之中，让 MVC 模式变成了 Massive View Controller 模式。</p>
-<h3 id="Controller-的臃肿问题何解？"><a href="#Controller-的臃肿问题何解？" class="headerlink" title="Controller 的臃肿问题何解？"></a>Controller 的臃肿问题何解？</h3><p>很多人试图解决 MVC 这种架构下 Controller 比较臃肿的问题。<br>我们来看看 MVC 这种架构的特点。其实设计模式很多时候是为了 Don’t repeat yourself 原则来做的，该原则要求能够复用的代码要尽量复用，来保证重用。在 MVC 这种设计模式中，我们发现 View 和 Model 都是符合这种原则的。<br><br>对于 View 来说，你如果抽象得好，那么一个 App 的动画效果可以很方便地移植到别的 App 上，而 Github 上也有很多 UI 控件，这些控件都是在 View 层做了很好的封装设计，使得它能够方便地开源给大家复用。<br>对于 Model 来说，它其实是用来存储业务的数据的，如果做得好，它也可以方便地复用。当然，因为和业务本身的数据意义相关，Model 层的复用大多数是在一个产品内部，不太可能像 View 层那样开源给社区。<br>说完 View 和 Model 了，那我们想想 Controller，Controller 有多少可以复用的？我们写完了一个 Controller 之后，可以很方便地复用它吗？结论是：非常难复用。在某些场景下，我们可能可以用 addSubViewController 之类的方式复用 Controller，但它的复用场景还是非常非常少的。<br><br>如果我们能够意识到 Controller 里面的代码不便于复用，我们就能知道什么代码应该写在 Controller 里面了，那就是那些不能复用的代码。在我看来，Controller 里面就只应该存放这些不能复用的代码，这些代码包括：<br><code>在初始化时，构造相应的 View 和 Model。&lt;br/&gt;
-监听 Model 层的事件，将 Model 层的数据传递到 View 层。&lt;br/&gt;
-监听 View 层的事件，并且将 View 层的事件转发到 Model 层。</code></p>
-<p>如果 Controller 只有以上的这些代码，那么它的逻辑将非常简单，而且也会非常短。</p>
+<h3 id="Controller-的臃肿问题何解？"><a href="#Controller-的臃肿问题何解？" class="headerlink" title="Controller 的臃肿问题何解？"></a>Controller 的臃肿问题何解？</h3><p>很多人试图解决 MVC 这种架构下 Controller 比较臃肿的问题。<br>我们来看看 MVC 这种架构的特点。其实设计模式很多时候是为了 Don’t repeat yourself 原则来做的，该原则要求能够复用的代码要尽量复用，来保证重用。在 MVC 这种设计模式中，我们发现 View 和 Model 都是符合这种原则的。<br><br>对于 View 来说，你如果抽象得好，那么一个 App 的动画效果可以很方便地移植到别的 App 上，而 Github 上也有很多 UI 控件，这些控件都是在 View 层做了很好的封装设计，使得它能够方便地开源给大家复用。<br>对于 Model 来说，它其实是用来存储业务的数据的，如果做得好，它也可以方便地复用。当然，因为和业务本身的数据意义相关，Model 层的复用大多数是在一个产品内部，不太可能像 View 层那样开源给社区。<br>说完 View 和 Model 了，那我们想想 Controller，Controller 有多少可以复用的？我们写完了一个 Controller 之后，可以很方便地复用它吗？结论是：非常难复用。在某些场景下，我们可能可以用 addSubViewController 之类的方式复用 Controller，但它的复用场景还是非常非常少的。<br><br>如果我们能够意识到 Controller 里面的代码不便于复用，我们就能知道什么代码应该写在 Controller 里面了，那就是那些不能复用的代码。在我看来，Controller 里面就只应该存放这些不能复用的代码，这些代码包括：</p>
+<pre><code>在初始化时，构造相应的 View 和 Model。
+监听 Model 层的事件，将 Model 层的数据传递到 View 层。
+监听 View 层的事件，并且将 View 层的事件转发到 Model 层。
+</code></pre><p>如果 Controller 只有以上的这些代码，那么它的逻辑将非常简单，而且也会非常短。</p>
 <p>我个人对于逻辑的抽取，有以下总结。</p>
 <h3 id="将网络请求抽象到单独的类中"><a href="#将网络请求抽象到单独的类中" class="headerlink" title="将网络请求抽象到单独的类中"></a>将网络请求抽象到单独的类中</h3><p>新手写代码，直接就在 Controller 里面用 AFNetworking 发一个请求，请求的完数据直接就传递给 View。入门一些的同学，知道把这些请求代码移到另外一个静态类里面。但是我觉得还不够，所以我建议将每一个网络请求直接封装成类。<br>把每一个网络请求封装成对象其实是使用了设计模式中的 Command 模式，它有以下好处：<br>将网络请求与具体的第三方库依赖隔离，方便以后更换底层的网络库。实际上我们公司的 iOS 客户端最初是基于 ASIHttpRequest 的，我们只花了两天，就很轻松地切换到了 AFNetworking。<br>方便在基类中处理公共逻辑，例如猿题库的数据版本号信息就统一在基类中处理。<br>方便在基类中处理缓存逻辑，以及其它一些公共逻辑。<br>方便做对象的持久化。<br>这部分代码从 Controller 中剥离出来后，不但简化了 Controller 中的逻辑，也达到了网络层的代码复用的效果。</p>
 <h3 id="将界面的拼装抽象到专门的类中"><a href="#将界面的拼装抽象到专门的类中" class="headerlink" title="将界面的拼装抽象到专门的类中"></a>将界面的拼装抽象到专门的类中</h3><p>新手写代码，喜欢在 Controller 中把一个个 UILabel ，UIButton，UITextField 往 self.view 上用 addSubView 方法放。我建议大家可以用两种办法把这些代码从 Controller 中剥离。<br>方法一：构造专门的 UIView 的子类，来负责这些控件的拼装。这是最彻底和优雅的方式，不过稍微麻烦一些的是，你需要把这些控件的事件回调先接管，再都一一暴露回 Controller。<br>方法二：用一个静态的 Util 类，帮助你做 UIView 的拼装工作。这种方式稍微做得不太彻底，但是比较简单。<br>对于一些能复用的 UI 控件，我建议用方法一。如果项目工程比较复杂，我也建议用方法一。如果项目太紧，另外相关项目的代码量也不多，可以尝试方法二。</p>
 <h3 id="构造-ViewModel"><a href="#构造-ViewModel" class="headerlink" title="构造 ViewModel"></a>构造 ViewModel</h3><p>谁说 MVC 就不能用 ViewModel 的？MVVM 的优点我们一样可以借鉴。具体做法就是将 ViewController 给 View 传递数据这个过程，抽象成构造 ViewModel 的过程。<br>这样抽象之后，View 只接受 ViewModel，而 Controller 只需要传递 ViewModel 这么一行代码。而另外构造 ViewModel 的过程，我们就可以移动到另外的类中了。<br>在具体实践中，我建议大家专门创建构造 ViewModel 工厂类，参见 工厂模式。另外，也可以专门将数据存取都抽将到一个 Service 层，由这层来提供 ViewModel 的获取。<br>专门构造存储类<br>如果要做得更细，可以把存储引擎再抽象出一层。这样你就可以方便地切换存储的底层，例如从 sqlite 切换到 key-value 的存储引擎等。</p>
 <h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>通过代码的抽取，我们可以将原本的 MVC 设计模式中的 ViewController 进一步拆分，构造出 网络请求层、ViewModel 层、Service 层、Storage 层等其它类，来配合 Controller 工作，从而使 Controller 更加简单，我们的 App 更容易维护。</p>
 <p>##UI界面绘制<br>StoryBoard 是苹果在 2011 年的 WWDC Session 309《Introducing Interface Builder Storyboarding》中介绍的 Interface Builder 的新功能。其基本想法是将原本的 xib 进行升级，引入一个容器用于管理多个 xib 文件，并且这个容器可以通过拖拽设置 xib 之间的界面跳转。而这个容器就是被苹果称做的 StoryBoard。<br>虽然StoryBoard看上去很美，但是缺点也显而易见，就是不利于查错，不利于git的使用，所以个人比较喜欢纯代码编写Autolayout。<br><br>这里推荐一个非常好用的第三方库<a href="https://github.com/SnapKit/SnapKit" target="_blank" rel="external"><code>Snapkit</code></a></p>
+<p>一个组件只要设置四个属性就能确定其位置与大小。是不是非常方便！讲一个个组件作为图层addsubview上去，布局的效率非常高。</p>
+<p>###组件<br>系统自带的UIbutton、UIlable都是非常常用的组件，更重要也是最难的是UITableView和UIcollectionView。</p>
+<p>以UITableView为例，需要实现UITableViewDelegate和UITableViewDataSource。以及cell的高度自适应都是比较困难的地方。这里具体代码的写法可以看我另外的一篇blog。此处不再赘述。</p>
+<p>##后续学习<br>学会了界面布局之后就是网络操作以及深层次的本地数据库处理了。对于网络操作，此处推荐一个比较好的第三方库<a href="https://github.com/Alamofire/Alamofire" target="_blank" rel="external"><code>Alamofire</code></a>他是著名OC库AFNetworking作者所写的Swift版本，能够很好地满足一般的GET,POST请求，更多用法请查阅官方文档。<br>对于数据库操作推荐学习Realm。</p>
+<p>##关于第三方库<br>在实际APP的开发过程中不可避免地会用到很多的第三方库，这些第三方库能大大减少我们的工作量，也能提高我们的效率。首先介绍管理第三方库的cocoapods。关于它的安装及用法google一下有很多，这里推荐一个大神的总结。常用的方法都在这里了。<a href="http://blog.devtang.com/2014/05/25/use-cocoapod-to-manage-ios-lib-dependency/" target="_blank" rel="external"><code>cocoapods</code></a><br><br><br>最后推荐几个常用第三方库：<br><a href="https://github.com/SnapKit/SnapKit" target="_blank" rel="external"><code>Snapkit</code></a><br><a href="https://github.com/Alamofire/Alamofire" target="_blank" rel="external"><code>Alamofire</code></a><br><a href="https://github.com/relatedcode/ProgressHUD" target="_blank" rel="external"><code>ProgressHUD</code></a><br><a href="https://github.com/MortimerGoro/MGSwipeTableCell" target="_blank" rel="external"><code>MGSwipeTableCell</code></a><br>完整的第三方库整理可以<a href="http://www.jianshu.com/p/a43e56405b77" target="_blank" rel="external"><code>点击</code></a></p>
+<p>#总结<br>如果能真正理解并用好上面的内容，则可以算是入门了iOS开发。iOS的开发还设计很多很多的技巧，我会在之后的时间里慢慢总结。时间仓促，希望所写对大家的初步学习有所帮助。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -152,17 +159,17 @@
 	
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
+  <strong class="toc-title">文章目录</strong>
  
  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#语言准备"><span class="toc-number">1.</span> <span class="toc-text">语言准备</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#学习资料"><span class="toc-number">2.</span> <span class="toc-text">学习资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关于开发"><span class="toc-number">3.</span> <span class="toc-text">关于开发</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#架构"><span class="toc-number">3.1.</span> <span class="toc-text">架构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Controller-的臃肿问题何解？"><span class="toc-number">3.1.1.</span> <span class="toc-text">Controller 的臃肿问题何解？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将网络请求抽象到单独的类中"><span class="toc-number">3.1.2.</span> <span class="toc-text">将网络请求抽象到单独的类中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将界面的拼装抽象到专门的类中"><span class="toc-number">3.1.3.</span> <span class="toc-text">将界面的拼装抽象到专门的类中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构造-ViewModel"><span class="toc-number">3.1.4.</span> <span class="toc-text">构造 ViewModel</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小结"><span class="toc-number">3.1.5.</span> <span class="toc-text">小结</span></a></li></ol></li></ol></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
 <aside class="clearfix">
 
   
@@ -173,7 +180,7 @@
   
 
   <div class="linkslist">
-  <p class="asidetitle">Links</p>
+  <p class="asidetitle">友情链接</p>
     <ul>
         
           <li>
@@ -195,11 +202,11 @@
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
 </div>
 
   <div class="weiboshow">
-  <p class="asidetitle">Weibo</p>
+  <p class="asidetitle">新浪微博</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=b3593ceb&dpc=1"></iframe>
 </div>
 
@@ -426,7 +433,7 @@ var _hmt = _hmt || [];
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
