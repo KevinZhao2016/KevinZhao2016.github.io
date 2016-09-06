@@ -47,7 +47,7 @@
 				<h1 class="site-name"><a href="/" title="Kevin&#39;s Blog">Kevin&#39;s Blog</a></h1>
 				<h2 class="blog-motto">Walk steps step by step</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -63,7 +63,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
 						<input type="hidden" name="q" value="site:yoursite.com">
 					</form>
 					
@@ -88,14 +88,15 @@
 		<a href="/about" title="Kevin Zhao" target="_blank" itemprop="author">Kevin Zhao</a>
 		
   <p class="article-time">
-    <time datetime="2016-09-05T11:05:40.000Z" itemprop="datePublished"> 發表於 2016-09-05</time>
+    <time datetime="2016-09-05T11:05:40.000Z" itemprop="datePublished"> Published 2016-09-05</time>
     
   </p>
 </header>
     <div class="article-content">
         
         <h1 id="语言准备"><a href="#语言准备" class="headerlink" title="语言准备"></a>语言准备</h1><p>  自从Swift开源之后，苹果对它的推广力度日益增大，如今swift已到了3.0的阶段。在2016WWDC上的swift playgrounds虽然只是一个看起来近似于游戏的APP,却足见苹果对于它的重视程度。虽然目前大公司的项目“船大难掉头”，但可以预见几年内swift必将取代OC。对于现阶段的初学者来说，先学习掌握Swift，便足以入手iOS开发了。<br><br>现在大部分优秀第三方库已有swift版本，少数可能只有OC（但是也可以使用桥接）。个人建议如果需要查看源代码，或者有空余时间则可以去初步了解一下OC，会有利于某些代码的理解。</p>
-<h1 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h1><p>最好的语言学习资料当然是Apple的官方文档啦~这里给出传送门 [<figure class="highlight plain"><figcaption><span>[```Swift Guide```](http://dev.swiftguide.cn) ,但是在以后的学习过程中看英文文档是程序猿一项必备的技能。</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># 关于开发</div><div class="line">## 架构</div><div class="line">目前客户端软件开发框架有很多，比如MVC,MVVM等等，个人比较习惯于MVC的架构。</div><div class="line">MVC，全称是 Model View Controller，是模型 (model)－视图 (view)－控制器 (controller) 的缩写。它表示的是一种常见的客户端软件开发框架。</div><div class="line">但是 MVC 这种设计模式真的用得好吗？其实不是的，MVC 这种分层方式虽然清楚，但是如果使用不当，很可能让大量代码都集中在 Controller 之中，让 MVC 模式变成了 Massive View Controller 模式。</div><div class="line">### Controller 的臃肿问题何解？</div><div class="line">很多人试图解决 MVC 这种架构下 Controller 比较臃肿的问题。</div><div class="line">我们来看看 MVC 这种架构的特点。其实设计模式很多时候是为了 Don&apos;t repeat yourself 原则来做的，该原则要求能够复用的代码要尽量复用，来保证重用。在 MVC 这种设计模式中，我们发现 View 和 Model 都是符合这种原则的。&lt;br/&gt;</div><div class="line">对于 View 来说，你如果抽象得好，那么一个 App 的动画效果可以很方便地移植到别的 App 上，而 Github 上也有很多 UI 控件，这些控件都是在 View 层做了很好的封装设计，使得它能够方便地开源给大家复用。</div><div class="line">对于 Model 来说，它其实是用来存储业务的数据的，如果做得好，它也可以方便地复用。当然，因为和业务本身的数据意义相关，Model 层的复用大多数是在一个产品内部，不太可能像 View 层那样开源给社区。</div><div class="line">说完 View 和 Model 了，那我们想想 Controller，Controller 有多少可以复用的？我们写完了一个 Controller 之后，可以很方便地复用它吗？结论是：非常难复用。在某些场景下，我们可能可以用 addSubViewController 之类的方式复用 Controller，但它的复用场景还是非常非常少的。&lt;br/&gt;</div><div class="line">如果我们能够意识到 Controller 里面的代码不便于复用，我们就能知道什么代码应该写在 Controller 里面了，那就是那些不能复用的代码。在我看来，Controller 里面就只应该存放这些不能复用的代码，这些代码包括：</div><div class="line"></div><div class="line">```在初始化时，构造相应的 View 和 Model。</div><div class="line">监听 Model 层的事件，将 Model 层的数据传递到 View 层。</div><div class="line">监听 View 层的事件，并且将 View 层的事件转发到 Model 层。</div></pre></td></tr></table></figure></p>
+<h1 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h1><p>最好的语言学习资料当然是Apple的官方文档啦~这里给出传送门 [<figure class="highlight plain"><figcaption><span>[```Swift Guide```](http://dev.swiftguide.cn) ,但是在以后的学习过程中看英文文档是程序猿一项必备的技能。</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># 关于开发</div><div class="line">## 架构</div><div class="line">目前客户端软件开发框架有很多，比如MVC,MVVM等等，个人比较习惯于MVC的架构。</div><div class="line">MVC，全称是 Model View Controller，是模型 (model)－视图 (view)－控制器 (controller) 的缩写。它表示的是一种常见的客户端软件开发框架。</div><div class="line">但是 MVC 这种设计模式真的用得好吗？其实不是的，MVC 这种分层方式虽然清楚，但是如果使用不当，很可能让大量代码都集中在 Controller 之中，让 MVC 模式变成了 Massive View Controller 模式。</div><div class="line">### Controller 的臃肿问题何解？</div><div class="line">很多人试图解决 MVC 这种架构下 Controller 比较臃肿的问题。</div><div class="line">我们来看看 MVC 这种架构的特点。其实设计模式很多时候是为了 Don&apos;t repeat yourself 原则来做的，该原则要求能够复用的代码要尽量复用，来保证重用。在 MVC 这种设计模式中，我们发现 View 和 Model 都是符合这种原则的。&lt;br/&gt;</div><div class="line">对于 View 来说，你如果抽象得好，那么一个 App 的动画效果可以很方便地移植到别的 App 上，而 Github 上也有很多 UI 控件，这些控件都是在 View 层做了很好的封装设计，使得它能够方便地开源给大家复用。</div><div class="line">对于 Model 来说，它其实是用来存储业务的数据的，如果做得好，它也可以方便地复用。当然，因为和业务本身的数据意义相关，Model 层的复用大多数是在一个产品内部，不太可能像 View 层那样开源给社区。</div><div class="line">说完 View 和 Model 了，那我们想想 Controller，Controller 有多少可以复用的？我们写完了一个 Controller 之后，可以很方便地复用它吗？结论是：非常难复用。在某些场景下，我们可能可以用 addSubViewController 之类的方式复用 Controller，但它的复用场景还是非常非常少的。&lt;br/&gt;</div><div class="line">如果我们能够意识到 Controller 里面的代码不便于复用，我们就能知道什么代码应该写在 Controller 里面了，那就是那些不能复用的代码。在我看来，Controller 里面就只应该存放这些不能复用的代码，这些代码包括：</div></pre></td></tr></table></figure></p>
+<p>在初始化时，构造相应的 View 和 Model。<br>监听 Model 层的事件，将 Model 层的数据传递到 View 层。<br>监听 View 层的事件，并且将 View 层的事件转发到 Model 层。<br>```</p>
 <p>如果 Controller 只有以上的这些代码，那么它的逻辑将非常简单，而且也会非常短。</p>
 <p>我个人对于逻辑的抽取，有以下总结。</p>
 <h3 id="将网络请求抽象到单独的类中"><a href="#将网络请求抽象到单独的类中" class="headerlink" title="将网络请求抽象到单独的类中"></a>将网络请求抽象到单独的类中</h3><p>新手写代码，直接就在 Controller 里面用 AFNetworking 发一个请求，请求的完数据直接就传递给 View。入门一些的同学，知道把这些请求代码移到另外一个静态类里面。但是我觉得还不够，所以我建议将每一个网络请求直接封装成类。<br>把每一个网络请求封装成对象其实是使用了设计模式中的 Command 模式，它有以下好处：<br>将网络请求与具体的第三方库依赖隔离，方便以后更换底层的网络库。实际上我们公司的 iOS 客户端最初是基于 ASIHttpRequest 的，我们只花了两天，就很轻松地切换到了 AFNetworking。<br>方便在基类中处理公共逻辑，例如猿题库的数据版本号信息就统一在基类中处理。<br>方便在基类中处理缓存逻辑，以及其它一些公共逻辑。<br>方便做对象的持久化。<br>这部分代码从 Controller 中剥离出来后，不但简化了 Controller 中的逻辑，也达到了网络层的代码复用的效果。</p>
@@ -146,7 +147,7 @@
 		<a href="/about" title="Kevin Zhao" target="_blank" itemprop="author">Kevin Zhao</a>
 		
   <p class="article-time">
-    <time datetime="2016-08-01T02:03:49.000Z" itemprop="datePublished"> 發表於 2016-08-01</time>
+    <time datetime="2016-08-01T02:03:49.000Z" itemprop="datePublished"> Published 2016-08-01</time>
     
   </p>
 </header>
@@ -204,7 +205,7 @@ imageview.tintColor = UIColor.redColor()
 		<a href="/about" title="Kevin Zhao" target="_blank" itemprop="author">Kevin Zhao</a>
 		
   <p class="article-time">
-    <time datetime="2016-08-01T01:54:15.000Z" itemprop="datePublished"> 發表於 2016-08-01</time>
+    <time datetime="2016-08-01T01:54:15.000Z" itemprop="datePublished"> Published 2016-08-01</time>
     
   </p>
 </header>
@@ -264,7 +265,7 @@ self.presentViewController(vc, animated: true) {
 		<a href="/about" title="Kevin Zhao" target="_blank" itemprop="author">Kevin Zhao</a>
 		
   <p class="article-time">
-    <time datetime="2016-07-27T11:05:25.000Z" itemprop="datePublished"> 發表於 2016-07-27</time>
+    <time datetime="2016-07-27T11:05:25.000Z" itemprop="datePublished"> Published 2016-07-27</time>
     
   </p>
 </header>
@@ -322,7 +323,7 @@ self.presentViewController(vc, animated: true) {
 		<a href="/about" title="Kevin Zhao" target="_blank" itemprop="author">Kevin Zhao</a>
 		
   <p class="article-time">
-    <time datetime="2016-07-26T07:58:49.000Z" itemprop="datePublished"> 發表於 2016-07-26</time>
+    <time datetime="2016-07-26T07:58:49.000Z" itemprop="datePublished"> Published 2016-07-26</time>
     
   </p>
 </header>
@@ -405,7 +406,7 @@ if isLocalDataExisted == true{
 		<a href="/about" title="Kevin Zhao" target="_blank" itemprop="author">Kevin Zhao</a>
 		
   <p class="article-time">
-    <time datetime="2016-07-25T13:13:45.000Z" itemprop="datePublished"> 發表於 2016-07-25</time>
+    <time datetime="2016-07-25T13:13:45.000Z" itemprop="datePublished"> Published 2016-07-25</time>
     
   </p>
 </header>
@@ -522,10 +523,10 @@ func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSInde
 
 
 </div>
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
@@ -536,7 +537,7 @@ func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSInde
   
 
   <div class="linkslist">
-  <p class="asidetitle">友情鏈接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -558,11 +559,11 @@ func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSInde
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
 </div>
 
   <div class="weiboshow">
-  <p class="asidetitle">新浪微博</p>
+  <p class="asidetitle">Weibo</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=b3593ceb&dpc=1"></iframe>
 </div>
 
@@ -712,7 +713,7 @@ var _hmt = _hmt || [];
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
