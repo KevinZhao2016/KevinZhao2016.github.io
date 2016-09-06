@@ -17,7 +17,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/09/05/iOS入门学习路线/index.html">
 <meta property="og:site_name" content="Kevin's Blog">
 <meta property="og:description" content="语言准备  自从Swift开源之后，苹果对它的推广力度日益增大，如今swift已到了3.0的阶段。在2016WWDC上的swift playgrounds虽然只是一个看起来近似于游戏的APP,却足见苹果对于它的重视程度。虽然目前大公司的项目“船大难掉头”，但可以预见几年内swift必将取代OC。对于现阶段的初学者来说，先学习掌握Swift，便足以入手iOS开发了。现在大部分优秀第三方库已有swif">
-<meta property="og:updated_time" content="2016-09-06T05:44:35.000Z">
+<meta property="og:updated_time" content="2016-09-06T05:45:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS入门学习路线">
 <meta name="twitter:description" content="语言准备  自从Swift开源之后，苹果对它的推广力度日益增大，如今swift已到了3.0的阶段。在2016WWDC上的swift playgrounds虽然只是一个看起来近似于游戏的APP,却足见苹果对于它的重视程度。虽然目前大公司的项目“船大难掉头”，但可以预见几年内swift必将取代OC。对于现阶段的初学者来说，先学习掌握Swift，便足以入手iOS开发了。现在大部分优秀第三方库已有swif">
@@ -48,7 +48,7 @@
 				<h1 class="site-name"><a href="/" title="Kevin&#39;s Blog">Kevin&#39;s Blog</a></h1>
 				<h2 class="blog-motto">Walk steps step by step</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -64,7 +64,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
 						<input type="hidden" name="q" value="site:yoursite.com">
 					</form>
 					
@@ -87,22 +87,23 @@
 		<a href="/about" title="Kevin Zhao" target="_blank" itemprop="author">Kevin Zhao</a>
 		
   <p class="article-time">
-    <time datetime="2016-09-05T11:05:40.000Z" itemprop="datePublished"> Published 2016-09-05</time>
+    <time datetime="2016-09-05T11:05:40.000Z" itemprop="datePublished"> 发表于 2016-09-05</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
+			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#语言准备"><span class="toc-number">1.</span> <span class="toc-text">语言准备</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#学习资料"><span class="toc-number">2.</span> <span class="toc-text">学习资料</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#语言准备"><span class="toc-number">1.</span> <span class="toc-text">语言准备</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#学习资料"><span class="toc-number">2.</span> <span class="toc-text">学习资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关于开发"><span class="toc-number">3.</span> <span class="toc-text">关于开发</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#架构"><span class="toc-number">3.1.</span> <span class="toc-text">架构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Controller-的臃肿问题何解？"><span class="toc-number">3.1.1.</span> <span class="toc-text">Controller 的臃肿问题何解？</span></a></li></ol></li></ol></li></ol>
 		
 		</div>
 		
 		<h1 id="语言准备"><a href="#语言准备" class="headerlink" title="语言准备"></a>语言准备</h1><p>  自从Swift开源之后，苹果对它的推广力度日益增大，如今swift已到了3.0的阶段。在2016WWDC上的swift playgrounds虽然只是一个看起来近似于游戏的APP,却足见苹果对于它的重视程度。虽然目前大公司的项目“船大难掉头”，但可以预见几年内swift必将取代OC。对于现阶段的初学者来说，先学习掌握Swift，便足以入手iOS开发了。<br><br>现在大部分优秀第三方库已有swift版本，少数可能只有OC（但是也可以使用桥接）。个人建议如果需要查看源代码，或者有空余时间则可以去初步了解一下OC，会有利于某些代码的理解。</p>
-<h1 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h1><p>最好的语言学习资料当然是Apple的官方文档啦~这里给出传送门 [<figure class="highlight plain"><figcaption><span>如果一开始看英文文档比较困难，这里也有质量比较高的民间大神整理的 [```Swift Guide```](http://dev.swiftguide.cn) ,但是在以后的学习过程中看英文文档是程序猿一项必备的技能。</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># 关于开发</div><div class="line">## 架构</div><div class="line">目前客户端软件开发框架有很多，比如MVC,MVVM等等，个人比较习惯于MVC的架构。</div><div class="line">MVC，全称是 Model View Controller，是模型 (model)－视图 (view)－控制器 (controller) 的缩写。它表示的是一种常见的客户端软件开发框架。</div><div class="line">但是 MVC 这种设计模式真的用得好吗？其实不是的，MVC 这种分层方式虽然清楚，但是如果使用不当，很可能让大量代码都集中在 Controller 之中，让 MVC 模式变成了 Massive View Controller 模式。</div><div class="line">### ```Controller 的臃肿问题何解？</div></pre></td></tr></table></figure></p>
-<p>很多人试图解决 MVC 这种架构下 Controller 比较臃肿的问题。<br>我们来看看 MVC 这种架构的特点。其实设计模式很多时候是为了 Don’t repeat yourself 原则来做的，该原则要求能够复用的代码要尽量复用，来保证重用。在 MVC 这种设计模式中，我们发现 View 和 Model 都是符合这种原则的。<br><br>对于 View 来说，你如果抽象得好，那么一个 App 的动画效果可以很方便地移植到别的 App 上，而 Github 上也有很多 UI 控件，这些控件都是在 View 层做了很好的封装设计，使得它能够方便地开源给大家复用。<br>对于 Model 来说，它其实是用来存储业务的数据的，如果做得好，它也可以方便地复用。当然，因为和业务本身的数据意义相关，Model 层的复用大多数是在一个产品内部，不太可能像 View 层那样开源给社区。<br>说完 View 和 Model 了，那我们想想 Controller，Controller 有多少可以复用的？我们写完了一个 Controller 之后，可以很方便地复用它吗？结论是：非常难复用。在某些场景下，我们可能可以用 addSubViewController 之类的方式复用 Controller，但它的复用场景还是非常非常少的。<br><br>如果我们能够意识到 Controller 里面的代码不便于复用，我们就能知道什么代码应该写在 Controller 里面了，那就是那些不能复用的代码。在我看来，Controller 里面就只应该存放这些不能复用的代码，这些代码包括：</p>
+<h1 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h1><p>最好的语言学习资料当然是Apple的官方文档啦~这里给出传送门 <a href="https://developer.apple.com/swift/blog/" target="_blank" rel="external"><code>Swift官方文档</code></a>如果一开始看英文文档比较困难，这里也有质量比较高的民间大神整理的 <a href="http://dev.swiftguide.cn" target="_blank" rel="external"><code>Swift Guide</code></a> ,但是在以后的学习过程中看英文文档是程序猿一项必备的技能。</p>
+<h1 id="关于开发"><a href="#关于开发" class="headerlink" title="关于开发"></a>关于开发</h1><h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p>目前客户端软件开发框架有很多，比如MVC,MVVM等等，个人比较习惯于MVC的架构。<br>MVC，全称是 Model View Controller，是模型 (model)－视图 (view)－控制器 (controller) 的缩写。它表示的是一种常见的客户端软件开发框架。<br>但是 MVC 这种设计模式真的用得好吗？其实不是的，MVC 这种分层方式虽然清楚，但是如果使用不当，很可能让大量代码都集中在 Controller 之中，让 MVC 模式变成了 Massive View Controller 模式。</p>
+<h3 id="Controller-的臃肿问题何解？"><a href="#Controller-的臃肿问题何解？" class="headerlink" title="Controller 的臃肿问题何解？"></a>Controller 的臃肿问题何解？</h3><p>很多人试图解决 MVC 这种架构下 Controller 比较臃肿的问题。<br>我们来看看 MVC 这种架构的特点。其实设计模式很多时候是为了 Don’t repeat yourself 原则来做的，该原则要求能够复用的代码要尽量复用，来保证重用。在 MVC 这种设计模式中，我们发现 View 和 Model 都是符合这种原则的。<br><br>对于 View 来说，你如果抽象得好，那么一个 App 的动画效果可以很方便地移植到别的 App 上，而 Github 上也有很多 UI 控件，这些控件都是在 View 层做了很好的封装设计，使得它能够方便地开源给大家复用。<br>对于 Model 来说，它其实是用来存储业务的数据的，如果做得好，它也可以方便地复用。当然，因为和业务本身的数据意义相关，Model 层的复用大多数是在一个产品内部，不太可能像 View 层那样开源给社区。<br>说完 View 和 Model 了，那我们想想 Controller，Controller 有多少可以复用的？我们写完了一个 Controller 之后，可以很方便地复用它吗？结论是：非常难复用。在某些场景下，我们可能可以用 addSubViewController 之类的方式复用 Controller，但它的复用场景还是非常非常少的。<br><br>如果我们能够意识到 Controller 里面的代码不便于复用，我们就能知道什么代码应该写在 Controller 里面了，那就是那些不能复用的代码。在我看来，Controller 里面就只应该存放这些不能复用的代码，这些代码包括：</p>
 <pre><code>在初始化时，构造相应的 View 和 Model。
 监听 Model 层的事件，将 Model 层的数据传递到 View 层。
 监听 View 层的事件，并且将 View 层的事件转发到 Model 层。
@@ -146,17 +147,17 @@
 	
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
+  <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#语言准备"><span class="toc-number">1.</span> <span class="toc-text">语言准备</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#学习资料"><span class="toc-number">2.</span> <span class="toc-text">学习资料</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#语言准备"><span class="toc-number">1.</span> <span class="toc-text">语言准备</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#学习资料"><span class="toc-number">2.</span> <span class="toc-text">学习资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关于开发"><span class="toc-number">3.</span> <span class="toc-text">关于开发</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#架构"><span class="toc-number">3.1.</span> <span class="toc-text">架构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Controller-的臃肿问题何解？"><span class="toc-number">3.1.1.</span> <span class="toc-text">Controller 的臃肿问题何解？</span></a></li></ol></li></ol></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
 <aside class="clearfix">
 
   
@@ -167,7 +168,7 @@
   
 
   <div class="linkslist">
-  <p class="asidetitle">Links</p>
+  <p class="asidetitle">友情链接</p>
     <ul>
         
           <li>
@@ -189,11 +190,11 @@
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
 </div>
 
   <div class="weiboshow">
-  <p class="asidetitle">Weibo</p>
+  <p class="asidetitle">新浪微博</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=b3593ceb&dpc=1"></iframe>
 </div>
 
@@ -420,7 +421,7 @@ var _hmt = _hmt || [];
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
