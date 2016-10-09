@@ -81,6 +81,75 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2016/10/09/c语言约瑟夫环/" title="c语言约瑟夫环" itemprop="url">c语言约瑟夫环</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Kevin Zhao" target="_blank" itemprop="author">Kevin Zhao</a>
+		
+  <p class="article-time">
+    <time datetime="2016-10-09T05:46:25.000Z" itemprop="datePublished"> 发表于 2016-10-09</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>#题目描述<br>有 n 个人围坐成一圈，其编号为从 1 到 n 的递增数列，每个人有一个正整数密码。先选定一个任意正整数 m，并从 1 号开始报 1，2号报 2，以此类推，报到 m 时停止，该人出局，并把他的密码作为新的 m 值。重复该过程，直到所有人出局，求出局人编号顺序。</p>
+<p>#代码<br>`<br>//<br>// Created by Kevin on 2016/10/8.<br>//</p>
+<p>#include <stdio.h></stdio.h></p>
+<p>#include <stdlib.h></stdlib.h></p>
+<p>typedef struct node {<br>    int number;<br>    int password;<br>    struct node *next;<br>} node;</p>
+<p>node <em>createCircularLinkedList(int n) {<br>    node </em>temp = NULL;<br>    node <em>head = (node </em>) malloc(sizeof(node));<br>    temp = head;<br>    head-&gt;number = 1;<br>    for (int i = 2; i &lt;= n; i++) {<br>        temp-&gt;next = (node *) malloc(sizeof(node));<br>        temp-&gt;next-&gt;number = i;<br>        temp = temp-&gt;next;<br>        temp-&gt;next = NULL;<br>    }<br>    temp-&gt;next = head;<br>    return temp;<br>}//返回链表尾指针</p>
+<p>int initCircularLinkedList(node <em>rear) {<br>    if (NULL == rear)   // If a blank linked list.<br>        return 0;<br>    node </em>temp = rear;<br>    int password;<br>    printf(“Please input password:”);<br>    do {<br>        scanf(“%d”, &amp;password);<br>        temp-&gt;next-&gt;password = password;<br>        temp = temp-&gt;next;<br>    } while (temp != rear);<br>    return 1;<br>}</p>
+<p>//找到被删除结点的前驱<br>node <em>getDeletedNodePioneer(node </em>rear, int m, int n) {<br>    if (NULL == rear)<br>        return NULL;<br>    node *temp = rear;<br>    m = (m % n == 0 ? n : (m % n));//如果模为0，循环n次<br>    for (int i = 1; i &lt; m; i++) {<br>        temp = temp-&gt;next;<br>    }<br>    return temp;</p>
+<p>}</p>
+<p>node <em>deleteCircularLinkedListNode(node </em>pioneer) {<br>    if (NULL == pioneer)<br>        return NULL;<br>    node <em>temp = pioneer, </em>p;<br>    p = temp-&gt;next;<br>    printf(“%d “, p-&gt;number);<br>    temp-&gt;next = temp-&gt;next-&gt;next;<br>    free(p);<br>    return temp;<br>}</p>
+<p>int main() {<br>    int n = 0, m = 0, tempm = 0;<br>    node <em>rear = NULL, </em>p = NULL;<br>    printf(“Please input n:”);<br>    scanf(“%d”, &amp;n);<br>    rear = createCircularLinkedList(n);//新建链表<br>    initCircularLinkedList(rear);//初始化<br>    printf(“Please input m:”);<br>    scanf(“%d”, &amp;m);</p>
+<pre><code>while (n &gt; 0) {
+    p = getDeletedNodePioneer(rear, m, n);
+    tempm = p-&gt;next-&gt;password;//得到新的m值
+    rear = deleteCircularLinkedListNode(p);
+    m = tempm;
+    n--;
+}
+return 0;
+</code></pre><p>}<br>`</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2016/09/05/iOS入门学习路线/" title="iOS入门学习路线" itemprop="url">iOS入门学习路线</a>
   </h1>
   <p class="article-author">By
